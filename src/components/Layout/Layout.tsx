@@ -1,6 +1,10 @@
+import Navbar from "../Navbar"
+
 const Layout = () => {
   return (
-    <div>Layout</div>
+    <>
+      <Navbar />
+    </>
   )
 }
 
