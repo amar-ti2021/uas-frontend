@@ -20,8 +20,8 @@ const GlobalSection = ({ global }: GlobalSectionProps) => {
       subtitle="Data Covid Berdasarkan Status Global"
     >
       <Stack>
-        {global.map((item) => (
-          <Card>
+        {global.map((item, id) => (
+          <Card key={id}>
             <Title>{item.status}</Title>
             <Subtitle>{item.total}</Subtitle>
           </Card>
