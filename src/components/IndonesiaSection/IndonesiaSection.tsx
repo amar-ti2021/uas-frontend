@@ -19,8 +19,8 @@ const IndonesiaSection = ({ indonesia }: IndonesiaSectionProps) => {
       subtitle="Data Covid Berdasarkan Status Indonesia"
     >
       <Stack>
-        {indonesia.map((item) => (
-          <Card>
+        {indonesia.map((item, id) => (
+          <Card key={id}>
             <Title>{item.status}</Title>
             <Subtitle>{item.total}</Subtitle>
           </Card>
