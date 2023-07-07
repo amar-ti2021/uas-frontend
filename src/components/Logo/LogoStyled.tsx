@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const StyledNavbar = styled.nav`
+const LogoStyled = styled.nav`
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 0.8rem;
 `;
 
-export default StyledNavbar;
+export default LogoStyled;

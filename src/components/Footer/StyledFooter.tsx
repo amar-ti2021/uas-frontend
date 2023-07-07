@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const StyledNavbar = styled.nav`
+const StyledFooter = styled.nav`
   display: flex;
   justify-content: space-between;
-  padding: 0.8rem;
+  padding: 0.3rem;
 `;
 
-export default StyledNavbar;
+export default StyledFooter;

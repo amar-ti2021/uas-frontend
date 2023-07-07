@@ -21,8 +21,8 @@ const RegionSection = ({ regions }: RegionSectionProps) => {
   return (
     <Section title="Situation By Regions" subtitle="Situasi di penjuru dunia">
       <Stack>
-        {regions.map((region) => (
-          <Card>
+        {regions.map((region, id) => (
+          <Card key={id}>
             <Title>{region.name}</Title>
             {Object.entries(region.numbers).map(([key, value]) => (
               <div key={key}>
