@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <StyledNavbar>
       <div>
-        <h4>COVID ID</h4>
+        <h3>COVID ID</h3>
       </div>
       <ul>
         <li>
