@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../lib/store/store";
 import Title from "../../lib/ui/Title/Title";
 import { updateProvince } from "../../lib/slices/provincesSlice";
-
+import Image from "../../assets/undraw_conceptual_idea_xw7k.svg";
+import StyledUpdateForm from "./StyledUpdateForm";
 interface Province {
   type: string;
   name: string;
@@ -91,46 +92,49 @@ const UpdateForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Title>Covid Form</Title>
-      <div>
-        <label htmlFor="provinces">Provinsi</label>
-        <select
-          id="province"
-          value={provinceId}
-          onChange={handleProvinceChange}
-        >
-          {provinces.map((item, id) => (
-            <option key={id} value={id}>
-              {item.name}
-            </option>
-          ))}
-        </select>
-        {provinceIdError && <span>Tolong Pilih Provinsinya ya!</span>}
-      </div>
-      <div>
-        <label htmlFor="status">Status</label>
-        <select id="status" value={status} onChange={handleStatusChange}>
-          <option value="confirmed">Terkonfirmasi</option>
-          <option value="recovered">Sembuh</option>
-          <option value="treatment">Dirawat</option>
-          <option value="death">Meninggal</option>
-        </select>
-        {statusError && <span>Tolong Pilih Statusnya ya!</span>}
-      </div>
-      <div>
-        <label htmlFor="count">Jumlah</label>
-        <input
-          type="number"
-          min={1}
-          value={count}
-          id="count"
-          onChange={handleCountChange}
-        />
-        {countError && <span>Tolong Isi jumlah kasusnya ya!</span>}
-      </div>
-      <button type="submit">submit</button>
-    </form>
+    <StyledUpdateForm>
+      <img src={Image} />
+      <form onSubmit={handleSubmit}>
+        <Title>Covid Form</Title>
+        <div>
+          <label htmlFor="provinces">Provinsi</label>
+          <select
+            id="province"
+            value={provinceId}
+            onChange={handleProvinceChange}
+          >
+            {provinces.map((item, id) => (
+              <option key={id} value={id}>
+                {item.name}
+              </option>
+            ))}
+          </select>
+          {provinceIdError && <span>Tolong Pilih Provinsinya ya!</span>}
+        </div>
+        <div>
+          <label htmlFor="status">Status</label>
+          <select id="status" value={status} onChange={handleStatusChange}>
+            <option value="confirmed">Terkonfirmasi</option>
+            <option value="recovered">Sembuh</option>
+            <option value="treatment">Dirawat</option>
+            <option value="death">Meninggal</option>
+          </select>
+          {statusError && <span>Tolong Pilih Statusnya ya!</span>}
+        </div>
+        <div>
+          <label htmlFor="count">Jumlah</label>
+          <input
+            type="number"
+            min={1}
+            value={count}
+            id="count"
+            onChange={handleCountChange}
+          />
+          {countError && <span>Tolong Isi jumlah kasusnya ya!</span>}
+        </div>
+        <button type="submit">submit</button>
+      </form>
+    </StyledUpdateForm>
   );
 };
 
